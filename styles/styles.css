@@ -1,3 +1,8 @@
+body{
+    height: 97vh; /* view high port */
+    width: 97vw; /* view width port */
+}
+/* header */
 header{
     text-decoration: underline grey;
     font-size: 36pt;
@@ -9,4 +14,16 @@ header{
 #js{
     color: skyblue;
     font-style: italic;
+}
+/* main */
+#main{
+    display: flex; /* permet de séparer l'écrans en blocs bien distincts */
+    flex-direction: column;
+    height: 100%;
+}
+article{
+flex-grow: 1;  /* entre 0 et 1 donc prend toute la place */
+}
+footer{
+    text-align: center;
 }
