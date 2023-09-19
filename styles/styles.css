@@ -1,29 +1,50 @@
-body{
-    height: 97vh; /* view high port */
-    width: 97vw; /* view width port */
+body {
+    height: 97vh;
+    /* view high port */
+    width: 97vw;
+    /* view width port */
 }
+
 /* header */
-header{
+header {
     text-decoration: underline grey;
     font-size: 36pt;
 }
-#meme{
-    color:tomato;
-    font-weight: 900; /* 900=bold */
+
+#meme {
+    color: tomato;
+    font-weight: 900;
+    /* 900=bold */
 }
-#js{
+
+#js {
     color: skyblue;
     font-style: italic;
 }
+
 /* main */
-#main{
-    display: flex; /* permet de séparer l'écrans en blocs bien distincts */
+#main {
+    display: flex;
+    /* permet de séparer l'écrans en blocs bien distincts */
     flex-direction: column;
     height: 100%;
 }
-article{
-flex-grow: 1;  /* entre 0 et 1 donc prend toute la place */
+
+article {
+    flex-grow: 1;
+    /* entre 0 et 1 donc prend toute la place */
 }
-footer{
+
+#meme-viewer {
+    display: flex;
+    /* flex-direction: row;  valeur par défaut donc non spécifiée */
+    height: 100%;
+}
+
+#meme-viewer>*:first-child {
+    flex-grow: 1;
+}
+
+footer {
     text-align: center;
 }
