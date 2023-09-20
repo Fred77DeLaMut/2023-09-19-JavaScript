@@ -53,15 +53,15 @@
           <form action="/formulaireTraitement.php" name="meme_form">
             <h2>Edit meme</h2>
             <label for="texte">texte</label><br>
-            <input type="text" name="texte" id="texte" /><br>
+            <input type="text" name="texte" id="texte" value="c'est vide"/><br>
             <div class="col">
               <div>
                 <label for="valx">x</label><br>
-                <input type="number" name="valx" id="valx" min="0" />
+                <input type="number" name="valx" id="valx" value="15" min="0" />
               </div>
               <div>
                 <label for="valy">y</label><br>
-                <input type="number" name="valy" id="valy" min="0" />
+                <input type="number" name="valy" id="valy" value="5" min="0" />
               </div>
             </div>
             <hr />
@@ -72,11 +72,11 @@
             <div class="col">
               <div>
                 <label for="font-size">Taille</label><br>
-                <input type="number" name="fontSize" id="fontSize" min="6" />
+                <input type="number" name="fontSize" id="fontSize" value="10" min="6" />
               </div>
               <div>
                 <label for="fontWeight">Poids</label><br>
-                <input type="number" name="fontWeight" id="fontWeight" min="100" max="900" step="100" />
+                <input type="number" name="fontWeight" id="fontWeight" value="200" min="100" max="900" step="100" />
               </div>
             </div>
             <hr />
