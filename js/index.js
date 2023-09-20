@@ -16,15 +16,28 @@ function ChangePreHeader(color) {
  * @returns {undefined} pas de retour
  */
 function initJs(color) {
-  var bt = document.querySelector("#ne-pas-cliquer");
   ChangePreHeader(color);
+  var bt = document.querySelector("#ne-pas-cliquer");
   bt.addEventListener("click", function (evt) {
     console.log(evt);
     console.log(evt.target);
     bt.innerHTML = "Trop tard";
     ChangePreHeader("black");
   });
+
+  /**
+   * fonction de gestion de soumission formulaire
+   * @param {SubmitEvent} evt event de soumission
+   */
+  function onformsubmit(evt) {
+    evt.preventDefault(); 
+    console.log(evt);
+    //debugger;
+  }
+
+  document.forms["meme_form"].addEventListener("submit", onformsubmit);
+  //   document.forms.meme_form
 }
-document.addEventListener('DOMContentLoaded',function(evt){
-initJs("aquamarine");
+document.addEventListener("DOMContentLoaded", function (evt) {
+  initJs("aquamarine");
 });
