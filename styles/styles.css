@@ -61,7 +61,7 @@ article {
   width: 48%;
 }
 
-.col input {
+.col input, .col button{
   width: 90%;
 }
 
