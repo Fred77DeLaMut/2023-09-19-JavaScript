@@ -32,12 +32,21 @@ function initJs(color) {
   function onformsubmit(evt) {
     evt.preventDefault();
     console.log(evt);
-    console.log("texte=", evt.target["texte"].value);
-    console.log("x=", evt.target["valx"].value);
-    console.log("y=", evt.target["valy"].value);
-    console.log("coul=", evt.target["coul"].value);
-    console.log("fontSize=", evt.target["fontSize"].value);
-    console.log("fontWeight=", evt.target["fontWeight"].value);
+    var meme={
+        texte:evt.target["texte"].value,
+        x:Number(evt.target["valx"].value),
+        y:Number(evt.target["valy"].value),
+        coul:evt.target["coul"].value,
+        fontSize:Number(evt.target["fontSize"].value),
+        fontWeight:evt.target["fontWeight"].value
+    }
+    console.log(meme);
+    // console.log("texte=", evt.target["texte"].value);
+    // console.log("x=", evt.target["valx"].value);
+    // console.log("y=", evt.target["valy"].value);
+    // console.log("coul=", evt.target["coul"].value);
+    // console.log("fontSize=", evt.target["fontSize"].value);
+    // console.log("fontWeight=", evt.target["fontWeight"].value);
     //debugger; force l'arrêt. pas beau
   }
 
