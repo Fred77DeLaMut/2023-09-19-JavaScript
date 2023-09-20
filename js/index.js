@@ -30,14 +30,21 @@ function initJs(color) {
    * @param {SubmitEvent} evt event de soumission
    */
   function onformsubmit(evt) {
-    evt.preventDefault(); 
+    evt.preventDefault();
     console.log(evt);
-    //debugger;
+    console.log("texte=", evt.target["texte"].value);
+    console.log("x=", evt.target["valx"].value);
+    console.log("y=", evt.target["valy"].value);
+    console.log("coul=", evt.target["coul"].value);
+    console.log("fontSize=", evt.target["fontSize"].value);
+    console.log("fontWeight=", evt.target["fontWeight"].value);
+    //debugger; force l'arrêt. pas beau
   }
 
   document.forms["meme_form"].addEventListener("submit", onformsubmit);
-  //   document.forms.meme_form
+  // on peut aussi écrire document.forms.meme_form
 }
+
 document.addEventListener("DOMContentLoaded", function (evt) {
   initJs("aquamarine");
 });
