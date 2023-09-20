@@ -1,82 +1,62 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="/node_modules/bootstrap/dist/css/bootstrap.css"
-    />
-    <link rel="stylesheet" href="/styles/styles.css" />
-    <!-- <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script> -->
-    <!-- <script src="/js/index.js"></script> pas de script dans le head sinon il faut tout charger avant le html-->
-  </head>
 
-  <body>
-    <div id="is-js-loaded">JS pas chargé</div>
-    <div id="main">
-      <header><span id="meme">Meme</span>.<span id="js">js</span></header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="/styles/styles.css" />
+  <!-- <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script> -->
+  <!-- <script src="/js/index.js"></script> pas de script dans le head sinon il faut tout charger avant le html-->
+</head>
+
+<body>
+  <div id="is-js-loaded">JS pas chargé</div>
+  <div id="main">
+    <header><span id="meme">Meme</span>.<span id="js">js</span></header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-      <article>
-        <div id="meme-viewer">
-          <svg
-            width="100%"
-            height="100%"
-            viewBox="0 0 252 196"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-          >
-            <image xlink:href="/Images/MonImage.jpg" x="0" y="0" />
-            <text
-              x="10"
-              y="20"
-              font-size="14"
-              style="font-weight: 900; text-decoration: underline"
-              fill="skyblue"
-            >
-              Ceci n'est pas une éprouvette
-            </text>
-          </svg>
-          <div>droite</div>
-        </div>
-      </article>
-      <button id="ne-pas-cliquer" type="button">Ne pas cliquer ici</button>
-      <footer>Copyright &copy; 2023 Fred</footer>
-    </div>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="/js/index.js"></script> 
-  </body>
+      </div>
+    </nav>
+    <article>
+      <div id="meme-viewer">
+        <svg width="100%" height="100%" viewBox="0 0 252 196" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <image xlink:href="/Images/MonImage.jpg" x="0" y="0" />
+          <text x="10" y="20" font-size="14" style="font-weight: 900; text-decoration: underline" fill="skyblue">
+            Ceci n'est pas une éprouvette
+          </text>
+        </svg>
+        <div>droite</div>
+      </div>
+    </article>
+    <button id="ne-pas-cliquer" type="button">Ne pas cliquer ici</button>
+    <footer>Copyright &copy; 2023 Fred</footer>
+  </div>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="/js/index.js"></script>
+</body>
+
 </html>
