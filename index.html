@@ -49,7 +49,21 @@
             Ceci n'est pas une éprouvette
           </text>
         </svg>
-        <div>droite</div>
+        <div>
+          <form action="" name="meme_form">
+            <h2>Edit meme</h2>
+            <label for="texte">texte</label>
+            <input type="text" name="texte" id="texte" /><br>
+            <label for="valx">valeur de x</label> 
+            <input type="number" name="valx" id="valx" min="0"/><br>
+            <label for="valy">valeur de y</label> 
+            <input type="number" name="valy" id="valy" min="0"/><br>
+            <label for="font-size">taille de police</label>
+            <input type="number" name="font-size" id="font-size" min="6"/><br>
+            <label for="coul">couleur de police</label>
+            <input type="color" name="coul" id="coul" /><br>
+          </form>
+        </div>
       </div>
     </article>
     <button id="ne-pas-cliquer" type="button">Ne pas cliquer ici</button>
