@@ -36,7 +36,7 @@ function initJs(color) {
         texte:evt.target["texte"].value,
         x:Number(evt.target["valx"].value),
         y:Number(evt.target["valy"].value),
-        coul:evt.target["coul"].value,
+        color:evt.target["color"].value,
         fontSize:Number(evt.target["fontSize"].value),
         fontWeight:evt.target["fontWeight"].value
     }
@@ -44,7 +44,7 @@ function initJs(color) {
     // console.log("texte=", evt.target["texte"].value);
     // console.log("x=", evt.target["valx"].value);
     // console.log("y=", evt.target["valy"].value);
-    // console.log("coul=", evt.target["coul"].value);
+    // console.log("color=", evt.target["color"].value);
     // console.log("fontSize=", evt.target["fontSize"].value);
     // console.log("fontWeight=", evt.target["fontWeight"].value);
     //debugger; force l'arrêt. pas beau

@@ -1,24 +1,30 @@
 /**
- * Constructeur d'objet Meme
+ * Constructeur d'objet Meme avec ou sans json de base
  */
-function Meme() {
+function Meme(jsonConfiguredMemeStr) {
   // this attache la valeur à l'objet et est donc visible de l'extérieur
   this.texte = "Texte du meme";
+  this.x = 0;
+  this.y = 32;
+  this.color = "#000000";
+  this.fontWeight = "500";
+  this.fontSize = 32;
+  this.underline = false;
+  this.italic = false;
+  this.imageId = -1;
 
-  var _imageId = 0; //variable privée, on préfixe par underscore
-  this.getImageId = function () {
-    return _imageId;
+  /**
+   * chargement de valeurs a partir d'un meme en json
+   * @param {string} jsonStr
+   */
+  this.loadFromString = function (jsonStr) {
+    Object.assign(this, JSON.parse(jsonStr));
   };
 
-  function _changeImage(imageId) {
-    console.log("change image fn called");
-    _imageId = imageId;
+  if (jsonConfiguredMemeStr!==undefined) {
+    this.loadFromString(jsonConfiguredMemeStr);
+    
   }
-  this.changeImage = _changeImage; // visible de l'extérieur
-
-  console.log("Meme called", this.texte);
-  _changeImage(25);
-  console.log(_imageId);
 }
 
 var meme = new Meme();
