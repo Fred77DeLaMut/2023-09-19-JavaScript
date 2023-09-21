@@ -1,3 +1,5 @@
+import RestAdr, { REST_RESSOURCES } from "./constantes.js";
+
 class ImageShort {
   #uid; // champ privé mais visible depuis l'extérieur
   w = 100;
@@ -54,7 +56,7 @@ export class ImageMeme extends ImageShort {
 
 export class ImagesList extends Array {
   loadFromRest() {
-    return fetch("http://localhost:5679/images")
+    return fetch(`${RestAdr}${REST_RESSOURCES.images}`)
       .then((response) => {
         console.log(response);
         return response.json();
@@ -66,7 +68,7 @@ export class ImagesList extends Array {
           console.log(element,position,liste);
           this.push(element);
         })*/
-        this.push(...arr);  //...arr insère le contenu du tableau arr dans un autre
+        this.push(...arr); //...arr insère le contenu du tableau arr dans un autre
         console.log(this);
       });
   }
