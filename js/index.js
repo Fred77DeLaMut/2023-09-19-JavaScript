@@ -1,6 +1,25 @@
-import {Meme} from './Meme.js';
+import { Meme } from "./Meme.js";
+import { ImagesList, listeImages } from "./Image.js";
 /*let meme=new Meme();
 console.log(meme);*/
+
+/**
+ * chargement de la liste des options du select
+ * @param {ImagesListe} images liste d'images sous forme d'array ImagesListe
+ */
+const loadSelectImages = (images = listeImages) => {
+  const select = document.querySelector("select#image"); // le select devant le # est optionnel
+  const noItem = select.item(0);
+  select.innerHTML = "";
+  select.appendChild(noItem);
+  images.map((e) => {
+    const optEleme = document.createElement("option");
+    optEleme.value = e.id;
+    optEleme.innerHTML = e.title;
+    select.appendChild(optEleme);
+  });
+};
+window.lsi = loadSelectImages; //permet de lancer la fonction directement dans la console
 
 /**
  * affichage de l'état du js
@@ -36,14 +55,14 @@ function initJs(color) {
   function onformsubmit(evt) {
     evt.preventDefault();
     console.log(evt);
-    var meme={
-        texte:evt.target["texte"].value,
-        x:Number(evt.target["valx"].value),
-        y:Number(evt.target["valy"].value),
-        color:evt.target["color"].value,
-        fontSize:Number(evt.target["fontSize"].value),
-        fontWeight:evt.target["fontWeight"].value
-    }
+    var meme = {
+      texte: evt.target["texte"].value,
+      x: Number(evt.target["valx"].value),
+      y: Number(evt.target["valy"].value),
+      color: evt.target["color"].value,
+      fontSize: Number(evt.target["fontSize"].value),
+      fontWeight: evt.target["fontWeight"].value,
+    };
     console.log(meme);
     // console.log("texte=", evt.target["texte"].value);
     // console.log("x=", evt.target["valx"].value);
