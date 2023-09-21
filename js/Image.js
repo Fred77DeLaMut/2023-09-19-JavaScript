@@ -3,7 +3,7 @@ class ImageShort {
   w = 100;
   h;
   url;
-  constructor(img) {
+  constructor(img = {}) {
     this.#uid = Math.random();
     if (undefined !== img.w) {
       this.w = img.w;
@@ -21,11 +21,18 @@ class ImageShort {
   set uid(value) {
     this.#uid = value;
   }
+  /**
+   *
+   * @returns {number} ratio largeur/hauteur
+   */
+  getRatioWH() {
+    return this.w / this.h;
+  }
 }
 class ImageMeme extends ImageShort {
   title = "no image";
   id = undefined;
-  constructor(img) {
+  constructor(img = {}) {
     super(img);
     if (undefined !== img.title && img.title.length > 2) {
       this.title = img.title;
