@@ -1,7 +1,8 @@
+import { ImageMeme as Img} from "./Image.js";
 /**
  * Constructeur d'objet Meme avec ou sans json de base
  */
-function Meme(jsonConfiguredMemeStr) {
+export function Meme(jsonConfiguredMemeStr) {
   // this attache la valeur à l'objet et est donc visible de l'extérieur
   this.texte = "Texte du meme";
   this.x = 0;
@@ -12,6 +13,7 @@ function Meme(jsonConfiguredMemeStr) {
   this.underline = false;
   this.italic = false;
   this.imageId = -1;
+  this.image=new Img;
 
   /**
    * chargement de valeurs a partir d'un meme en json

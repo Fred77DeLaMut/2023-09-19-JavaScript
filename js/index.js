@@ -1,3 +1,7 @@
+import {Meme} from './Meme.js';
+/*let meme=new Meme();
+console.log(meme);*/
+
 /**
  * affichage de l'état du js
  * @param {string} color chaine de valeur de couleur CSS

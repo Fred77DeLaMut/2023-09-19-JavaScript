@@ -29,7 +29,7 @@ class ImageShort {
     return this.w / this.h;
   }
 }
-class ImageMeme extends ImageShort {
+export class ImageMeme extends ImageShort {
   title = "no image";
   id = undefined;
   constructor(img = {}) {
@@ -51,3 +51,26 @@ class ImageMeme extends ImageShort {
     }
   }
 }
+
+class ImageList extends Array {
+  loadFromRest() {
+    fetch("http://localhost:5679/images")
+      .then((response) => {
+        console.log(response);
+        return response.json();
+      })
+      .then((arr) => {
+        console.log(arr, this);
+        this.splice(0); //conserve jusqu'à la ième case. ici on vide
+        /*arr.map((element,position,liste)=>{  //map = foreach met retourne des valeurs
+          console.log(element,position,liste);
+          this.push(element);
+        })*/
+        this.push(...arr);  //...arr insère le contenu du tableau arr dans un autre
+        console.log(this);
+      });
+  }
+}
+
+export const listeImages = new ImageList();
+listeImages.loadFromRest();
