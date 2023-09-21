@@ -1,8 +1,10 @@
 class ImageShort {
+  #uid; // champ privé mais visible depuis l'extérieur
   w = 100;
   h;
   url;
   constructor(img) {
+    this.#uid = Math.random();
     if (undefined !== img.w) {
       this.w = img.w;
     }
@@ -12,6 +14,12 @@ class ImageShort {
     } else {
       this.url = "";
     }
+  }
+  get uid() {
+    return this.#uid;
+  }
+  set uid(value) {
+    this.#uid = value;
   }
 }
 class ImageMeme extends ImageShort {
