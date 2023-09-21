@@ -5,7 +5,7 @@ console.log(meme);*/
 
 /**
  * chargement de la liste des options du select
- * @param {ImagesListe} images liste d'images sous forme d'array ImagesListe
+ * @param {ImagesList} images liste d'images sous forme d'array ImagesListe
  */
 const loadSelectImages = (images = listeImages) => {
   const select = document.querySelector("select#image"); // le select devant le # est optionnel
@@ -19,7 +19,7 @@ const loadSelectImages = (images = listeImages) => {
     select.appendChild(optEleme);
   });
 };
-window.lsi = loadSelectImages; //permet de lancer la fonction directement dans la console
+//window.lsi = loadSelectImages; //permet de lancer la fonction directement dans la console
 
 /**
  * affichage de l'état du js
@@ -77,6 +77,11 @@ function initJs(color) {
   // on peut aussi écrire document.forms.meme_form
 }
 
+//déclenchement du chargement des images
+const promiseImage = listeImages.loadFromRest();
 document.addEventListener("DOMContentLoaded", function (evt) {
+  promiseImage.then((r) => {
+    loadSelectImages(listeImages);
+  });
   initJs("aquamarine");
 });
