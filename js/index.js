@@ -1,7 +1,12 @@
 import { Meme } from "./Meme.js";
 import { ImagesList, listeImages } from "./Image.js";
 
+/**
+ * Récupère les valeurs initiales dans l'objet
+ * @param {mem} mem
+ */
 const fillFormDatas = (mem) => {
+  const formImage = document.forms["meme-viewer"];
   const formElement = document.forms["meme_form"];
   formElement["texte"].value = mem.texte;
   formElement["valx"].value = mem.x;
@@ -10,7 +15,8 @@ const fillFormDatas = (mem) => {
   formElement["fontWeight"].value = mem.fontWeight;
   formElement["coul"].value = mem.color;
   formElement["italic"].checked = mem.italic;
-  formElement["underline"].checked=mem.underline;
+  formElement["underline"].checked = mem.underline;
+  formElement["image"].value=mem.imageId;
 };
 
 const addFormEvents = () => {
@@ -22,7 +28,15 @@ const addFormEvents = () => {
    */
   function onformsubmit(evt) {
     evt.preventDefault();
-    //console.log(current);
+    const promiseSavDatas = current.savDatas();
+    promiseSavDatas.then((obj) => {
+      current.savDatas();
+      current = new Meme();
+      current.render = renderMeme;
+      fillFormDatas(current);
+      renderMeme(current);
+      console.log(current);
+    });
   }
   const form = document.forms["meme_form"];
   form.addEventListener("submit", onformsubmit);
@@ -51,6 +65,14 @@ const addFormEvents = () => {
   form["underline"].addEventListener("input", (evt) => {
     current.update({ underline: evt.target.checked });
   });
+  form["image"].addEventListener("input", (evt) => {
+    const id = Number(evt.target.value);
+    const imageFound = listeImages.find((elementimage) => {
+      return elementimage.id === id;
+    });
+    current.update({ imageId: id, image: imageFound });
+    console.log(evt);
+  });
 };
 
 /**
@@ -59,8 +81,9 @@ const addFormEvents = () => {
  */
 const renderMeme = (mem) => {
   console.log(mem);
-  const svg = document.querySelector("svg");
-  const TextElement = svg.querySelector("text");
+  const svgElement = document.querySelector("svg");
+  const imageElement = svgElement.querySelector("image");
+  const TextElement = svgElement.querySelector("text");
   TextElement.innerHTML = mem.texte;
   TextElement.setAttribute("y", mem.y);
   TextElement.setAttribute("x", mem.x);
@@ -69,6 +92,18 @@ const renderMeme = (mem) => {
   TextElement.style.fontWeight = mem.fontWeight;
   TextElement.style.textDecoration = mem.underline ? "underline" : "none";
   TextElement.style.fontStyle = mem.italic ? "italic" : "normal";
+  svgElement.setAttribute(  
+    "viewBox",
+    `0 0 ${undefined !== mem.image ? mem.image.w : "500"} ${
+      undefined !== mem.image ? mem.image.h : "500"
+    }`
+  );
+  imageElement.setAttribute(
+    "href",
+    undefined !== mem.image ? mem.image.url : "/images/MonImage.jpg"
+  );
+  // l'image
+
   /* rendu dom pour un meme */
 };
 

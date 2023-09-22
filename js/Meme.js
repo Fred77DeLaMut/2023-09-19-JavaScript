@@ -1,3 +1,4 @@
+import REST_ADR, { REST_RESSOURCES } from "./constantes.js";
 import { ImageMeme as Img } from "./Image.js";
 /**
  * Constructeur d'objet Meme avec ou sans json de base
@@ -13,7 +14,7 @@ export function Meme(jsonConfiguredMemeStr) {
   this.underline = true;
   this.italic = false;
   this.imageId = -1;
-  this.image = new Img();
+  this.image = undefined;
   this.render = undefined;
 
   const insideRender = () => {
@@ -29,6 +30,32 @@ export function Meme(jsonConfiguredMemeStr) {
   this.update = function (memeData) {
     Object.assign(this, memeData);
     insideRender();
+  };
+
+  /**
+   * sauvegarde des données
+   */
+  this.savDatas = () => {
+    //comme on n'a pas besoin de l'image, on l'enlève
+    const tmp = { ...this, image: undefined };
+    // ou delete tmp.image;
+    //const tmp = Object.assign({}, this);
+    //delete tmp.image;
+    return fetch(
+      `${REST_ADR}${REST_RESSOURCES.memes}${
+        undefined !== this.id ? "/" + this.id : ""
+      }`,
+      {
+        method: undefined !== this.id ? "PUT" : "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(tmp),
+      }
+    ).then((response) => {
+      return response.json();
+    });
+    // on peut ecrire then((response) =>response.json()) car une seule instruction
   };
 
   /**

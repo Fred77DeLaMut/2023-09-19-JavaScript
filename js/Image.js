@@ -1,9 +1,10 @@
+// le premier n'a pas d'accolades casear c'est le défault
 import RestAdr, { REST_RESSOURCES } from "./constantes.js";
 
 class ImageShort {
   #uid; // champ privé mais visible depuis l'extérieur
   w = 100;
-  h;
+  h =200;
   url;
   constructor(img = {}) {
     this.#uid = Math.random();
@@ -58,7 +59,7 @@ export class ImagesList extends Array {
   loadFromRest() {
     return fetch(`${RestAdr}${REST_RESSOURCES.images}`)
       .then((response) => {
-        console.log(response);
+        console.log("réponse=",response);
         return response.json();
       })
       .then((arr) => {

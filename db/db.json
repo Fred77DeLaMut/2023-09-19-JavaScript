@@ -201,6 +201,173 @@
       "frameSizeX": 0,
       "frameSizeY": 0,
       "id": 10
+    },
+    {
+      "texte": "Ceci n'est pas une éprouvette",
+      "x": 10,
+      "y": 32,
+      "color": "#00BFFF",
+      "fontWeight": "500",
+      "fontSize": 14,
+      "underline": true,
+      "italic": false,
+      "imageId": -1,
+      "image": {
+        "w": 100,
+        "h": 100,
+        "url": "",
+        "title": "no image"
+      },
+      "id": 11
+    },
+    {
+      "title": "React n'roll",
+      "text": "coucou",
+      "x": 600,
+      "y": 20,
+      "fontWeight": "500",
+      "fontSize": 600,
+      "underline": true,
+      "italic": true,
+      "imageId": 2,
+      "color": "#fbf4f4",
+      "frameSizeX": 0,
+      "frameSizeY": 600,
+      "id": 12
+    },
+    {
+      "texte": "Ceci n'est pas une éprouvette",
+      "x": 10,
+      "y": 32,
+      "color": "#00BFFF",
+      "fontWeight": "500",
+      "fontSize": 35,
+      "underline": false,
+      "italic": true,
+      "imageId": 3,
+      "image": {
+        "id": 3,
+        "title": "Wait long time",
+        "url": "https://images.pexels.com/photos/3756616/pexels-photo-3756616.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-3756616.jpg&fm=jpg",
+        "w": 4067,
+        "h": 6100
+      },
+      "id": 13
+    },
+    {
+      "texte": "Ceci n'est pas une éprouvette",
+      "x": 10,
+      "y": 32,
+      "color": "#00BFFF",
+      "fontWeight": "500",
+      "fontSize": 35,
+      "underline": false,
+      "italic": true,
+      "imageId": 3,
+      "image": {
+        "id": 3,
+        "title": "Wait long time",
+        "url": "https://images.pexels.com/photos/3756616/pexels-photo-3756616.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-3756616.jpg&fm=jpg",
+        "w": 4067,
+        "h": 6100
+      },
+      "id": 14
+    },
+    {
+      "texte": "Ceci est un beau sourire",
+      "x": 10,
+      "y": 32,
+      "color": "#00BFFF",
+      "fontWeight": "500",
+      "fontSize": 14,
+      "underline": true,
+      "italic": false,
+      "imageId": 1,
+      "id": 15
+    },
+    {
+      "texte": "Ceci est un beau sourire",
+      "x": 10,
+      "y": 32,
+      "color": "#00BFFF",
+      "fontWeight": "500",
+      "fontSize": 14,
+      "underline": true,
+      "italic": false,
+      "imageId": 1,
+      "id": 16
+    },
+    {
+      "texte": "Ceci est une paire de ...",
+      "x": 10,
+      "y": 32,
+      "color": "#00BFFF",
+      "fontWeight": "500",
+      "fontSize": 14,
+      "underline": true,
+      "italic": false,
+      "imageId": 0,
+      "id": 17
+    },
+    {
+      "texte": "Ceci est une paire de ...",
+      "x": 10,
+      "y": 32,
+      "color": "#00BFFF",
+      "fontWeight": "500",
+      "fontSize": 14,
+      "underline": true,
+      "italic": false,
+      "imageId": 0,
+      "id": 18
+    },
+    {
+      "texte": "Ceci n'est pas une éprouvette",
+      "x": 10,
+      "y": 32,
+      "color": "#00BFFF",
+      "fontWeight": "500",
+      "fontSize": 14,
+      "underline": true,
+      "italic": false,
+      "imageId": 0,
+      "id": 19
+    },
+    {
+      "texte": "Ceci n'est pas une éprouvette",
+      "x": 10,
+      "y": 32,
+      "color": "#00BFFF",
+      "fontWeight": "500",
+      "fontSize": 14,
+      "underline": true,
+      "italic": false,
+      "imageId": 0,
+      "id": 20
+    },
+    {
+      "texte": "Ceci EST une éprouvette",
+      "x": 10,
+      "y": 32,
+      "color": "#ec4d18",
+      "fontWeight": "700",
+      "fontSize": 14,
+      "underline": true,
+      "italic": false,
+      "imageId": -1,
+      "id": 21
+    },
+    {
+      "texte": "Ceci EST une éprouvette",
+      "x": 10,
+      "y": 32,
+      "color": "#ec4d18",
+      "fontWeight": "700",
+      "fontSize": 14,
+      "underline": true,
+      "italic": false,
+      "imageId": -1,
+      "id": 22
     }
   ]
 }
