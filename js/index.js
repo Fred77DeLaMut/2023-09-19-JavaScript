@@ -2,7 +2,7 @@ import { Meme } from "./Meme.js";
 import { ImagesList, listeImages } from "./Image.js";
 
 /**
- * Récupère les valeurs initiales dans l'objet
+ * Récupère les valeurs initiales dans l'objet pour les afficher
  * @param {mem} mem
  */
 const fillFormDatas = (mem) => {
@@ -16,7 +16,9 @@ const fillFormDatas = (mem) => {
   formElement["coul"].value = mem.color;
   formElement["italic"].checked = mem.italic;
   formElement["underline"].checked = mem.underline;
-  formElement["image"].value=mem.imageId;
+  formElement["image"].value = mem.imageId;
+  formElement["shadow"].checked = mem.shadow;
+  formElement["stroke"].checked = mem.stroke;
 };
 
 const addFormEvents = () => {
@@ -73,6 +75,13 @@ const addFormEvents = () => {
     current.update({ imageId: id, image: imageFound });
     console.log(evt);
   });
+
+  form["stroke"].addEventListener("input", (evt) => {
+    current.update({ stroke: evt.target.checked });
+  });
+  form["shadow"].addEventListener("input", (evt) => {
+    current.update({ shadow: evt.target.checked });
+  });
 };
 
 /**
@@ -92,7 +101,15 @@ const renderMeme = (mem) => {
   TextElement.style.fontWeight = mem.fontWeight;
   TextElement.style.textDecoration = mem.underline ? "underline" : "none";
   TextElement.style.fontStyle = mem.italic ? "italic" : "normal";
-  svgElement.setAttribute(  
+
+  mem.shadow === true
+    ? TextElement.classList.add("shadow")
+    : TextElement.classList.remove("shadow");
+  mem.stroke === true
+    ? TextElement.classList.add("stroke")
+    : TextElement.classList.remove("stroke");
+
+  svgElement.setAttribute(
     "viewBox",
     `0 0 ${undefined !== mem.image ? mem.image.w : "500"} ${
       undefined !== mem.image ? mem.image.h : "500"
