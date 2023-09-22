@@ -4,13 +4,13 @@ import { ImageMeme as Img } from "./Image.js";
  */
 export function Meme(jsonConfiguredMemeStr) {
   // this attache la valeur à l'objet et est donc visible de l'extérieur
-  this.texte = "C'est vide";
-  this.x = 0;
+  this.texte = "Ceci n'est pas une éprouvette";
+  this.x = 10;
   this.y = 32;
-  this.color = "#000000";
+  this.color = "#00BFFF";
   this.fontWeight = "500";
-  this.fontSize = 32;
-  this.underline = false;
+  this.fontSize = 14;
+  this.underline = true;
   this.italic = false;
   this.imageId = -1;
   this.image = new Img();

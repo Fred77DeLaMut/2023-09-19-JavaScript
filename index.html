@@ -45,29 +45,31 @@
         <svg width="100%" height="100%" viewBox="0 0 252 196" version="1.1" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink">
           <image xlink:href="/Images/MonImage.jpg" x="0" y="0" />
-          <text x="10" y="20" font-size="14" style="font-weight: 900; text-decoration: underline" fill="skyblue">
+          <text x="10" y="32" font-size="14" style="font-weight: 900; text-decoration: underline" fill="deepskyblue">
             Ceci n'est pas une éprouvette
           </text>
         </svg>
         <div>
           <form action="/formulaireTraitement.php" name="meme_form">
             <h2>Edit meme</h2>
-            <hr/>
-            <label for="image"><h3>image</h3></label><br>
+            <hr />
+            <label for="image">
+              <h3>image</h3>
+            </label><br>
             <select name="image" id="image">
               <option value="-1">no images</option>
             </select>
-            <hr/>
+            <hr />
             <label for="texte">texte</label><br>
-            <input type="text" name="texte" id="texte" value="c'est vide" /><br>
+            <input type="text" name="texte" id="texte" value="Ceci n'est pas une éprouvette" /><br>
             <div class="col">
               <div>
                 <label for="valx">x</label><br>
-                <input type="number" name="valx" id="valx" value="15" min="0" />
+                <input type="number" name="valx" id="valx" min="0" />
               </div>
               <div>
                 <label for="valy">y</label><br>
-                <input type="number" name="valy" id="valy" value="5" min="0" />
+                <input type="number" name="valy" id="valy" min="0" />
               </div>
             </div>
             <hr />
@@ -78,11 +80,22 @@
             <div class="col">
               <div>
                 <label for="font-size">Taille</label><br>
-                <input type="number" name="fontSize" id="fontSize" value="10" min="6" />
+                <input type="number" name="fontSize" id="fontSize" min="6" />
               </div>
               <div>
                 <label for="fontWeight">Poids</label><br>
-                <input type="number" name="fontWeight" id="fontWeight" value="200" min="100" max="900" step="100" />
+                <input type="number" name="fontWeight" id="fontWeight" min="100" max="900" step="100" />
+              </div>
+            </div>
+            <hr />
+            <div class="col">
+              <div>
+                <label for="underline">Souligné</label><br>
+                <input type="checkbox" name="underline" id="underline"/>
+              </div>
+              <div>
+                <label for="italic">Italique</label><br>
+                <input type="checkbox" name="italic" id="italic"/>
               </div>
             </div>
             <hr />

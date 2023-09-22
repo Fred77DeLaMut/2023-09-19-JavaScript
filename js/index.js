@@ -1,14 +1,28 @@
 import { Meme } from "./Meme.js";
 import { ImagesList, listeImages } from "./Image.js";
 
+const fillFormDatas = (mem) => {
+  const formElement = document.forms["meme_form"];
+  formElement["texte"].value = mem.texte;
+  formElement["valx"].value = mem.x;
+  formElement["valy"].value = mem.y;
+  formElement["fontSize"].value = mem.fontSize;
+  formElement["fontWeight"].value = mem.fontWeight;
+  formElement["coul"].value = mem.color;
+  formElement["italic"].checked = mem.italic;
+  formElement["underline"].checked=mem.underline;
+};
+
 const addFormEvents = () => {
+  fillFormDatas(current);
+  renderMeme(current);
   /**
    * fonction de gestion de soumission formulaire
    * @param {SubmitEvent} evt event de soumission
    */
   function onformsubmit(evt) {
     evt.preventDefault();
-    console.log(current);
+    //console.log(current);
   }
   const form = document.forms["meme_form"];
   form.addEventListener("submit", onformsubmit);
@@ -17,19 +31,25 @@ const addFormEvents = () => {
     current.update({ texte: evt.target.value });
   });
   form["valx"].addEventListener("input", (evt) => {
-    current.update({ x: evt.target.value });
+    current.update({ x: Number(evt.target.value) });
   });
   form["valy"].addEventListener("input", (evt) => {
-    current.update({ y: evt.target.value });
+    current.update({ y: Number(evt.target.value) });
   });
   form["coul"].addEventListener("input", (evt) => {
     current.update({ color: evt.target.value });
   });
   form["fontSize"].addEventListener("input", (evt) => {
-    current.update({ fontSize: evt.target.value });
+    current.update({ fontSize: Number(evt.target.value) });
   });
   form["fontWeight"].addEventListener("input", (evt) => {
     current.update({ fontWeight: evt.target.value });
+  });
+  form["italic"].addEventListener("input", (evt) => {
+    current.update({ italic: evt.target.checked });
+  });
+  form["underline"].addEventListener("input", (evt) => {
+    current.update({ underline: evt.target.checked });
   });
 };
 
@@ -39,10 +59,21 @@ const addFormEvents = () => {
  */
 const renderMeme = (mem) => {
   console.log(mem);
+  const svg = document.querySelector("svg");
+  const TextElement = svg.querySelector("text");
+  TextElement.innerHTML = mem.texte;
+  TextElement.setAttribute("y", mem.y);
+  TextElement.setAttribute("x", mem.x);
+  TextElement.setAttribute("fill", mem.color);
+  TextElement.setAttribute("font-size", mem.fontSize);
+  TextElement.style.fontWeight = mem.fontWeight;
+  TextElement.style.textDecoration = mem.underline ? "underline" : "none";
+  TextElement.style.fontStyle = mem.italic ? "italic" : "normal";
   /* rendu dom pour un meme */
 };
 
 let current = new Meme();
+
 current.render = renderMeme;
 //console.log(current);
 
